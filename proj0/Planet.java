@@ -2,7 +2,7 @@ public class Planet {
     /**
      *  Gravitational constant (G) in Newton square meters per kilogram squared.
      */
-    public static final double gCons = 6.67e-11;
+    private static final double gCons = 6.67e-11;
 
     /**
      * Current x position in meters.
@@ -33,7 +33,7 @@ public class Planet {
      * Filename of planet image.
      * e.g. `jupiter.gif`.
      */
-    String imgFileName;
+    public String imgFileName;
 
     /**
      * Constructor with x-y position, x-y velocity, mass, and image filename.
