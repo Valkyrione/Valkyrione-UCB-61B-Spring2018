@@ -14,7 +14,7 @@ public class RandomWorldDemo {
     private static final int HEIGHT = 50;
 
     private static final long SEED = 2873123;
-    private static final Random RANDOM = new Random(SEED);
+    private static final Random RANDOM = new Random();
 
     /**
      * Fills the given 2D array of tiles with RANDOM tiles.
@@ -26,6 +26,18 @@ public class RandomWorldDemo {
         for (int x = 0; x < width; x += 1) {
             for (int y = 0; y < height; y += 1) {
                 tiles[x][y] = randomTile();
+            }
+        }
+    }
+
+    /** Fills the given 2D array of tiles with NOTHING tiles.
+     */
+    public static void fillWithNOTHING(TETile[][] tiles) {
+        int width = tiles.length;
+        int height = tiles[0].length;
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                tiles[x][y] = Tileset.NOTHING;
             }
         }
     }
@@ -49,10 +61,13 @@ public class RandomWorldDemo {
         ter.initialize(WIDTH, HEIGHT);
 
         TETile[][] randomTiles = new TETile[WIDTH][HEIGHT];
-        fillWithRandomTiles(randomTiles);
+        /*fillWithRandomTiles(randomTiles);
+
+         */
+        fillWithNOTHING(randomTiles);
+        HexWorld.hexagonOfHexagons(randomTiles, 5);
 
         ter.renderFrame(randomTiles);
     }
-
 
 }

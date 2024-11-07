@@ -26,8 +26,30 @@ public class BoringWorldDemo {
 
         // fills in a block 14 tiles wide by 4 tiles tall
         for (int x = 20; x < 35; x += 1) {
-            for (int y = 5; y < 10; y += 1) {
-                world[x][y] = Tileset.WALL;
+            for (int y = 5; y < 16; y += 1) {
+                if (y == 5) {
+                    world[x][y] = Tileset.PLAYER;
+                } else if (y == 6) {
+                    world[x][y] = Tileset.WALL;
+                } else if (y == 7) {
+                    world[x][y] = Tileset.FLOOR;
+                } else if (y == 8) {
+                    world[x][y] = Tileset.GRASS;
+                } else if (y == 9) {
+                    world[x][y] = Tileset.WATER;
+                } else if (y == 10) {
+                    world[x][y] = Tileset.FLOWER;
+                } else if (y == 11) {
+                    world[x][y] = Tileset.LOCKED_DOOR;
+                } else if (y == 12) {
+                    world[x][y] = Tileset.UNLOCKED_DOOR;
+                } else if (y == 13) {
+                    world[x][y] = Tileset.SAND;
+                } else if (y == 14) {
+                    world[x][y] = Tileset.MOUNTAIN;
+                } else if (y == 15) {
+                    world[x][y] = Tileset.TREE;
+                }
             }
         }
 
